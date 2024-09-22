@@ -1,0 +1,23 @@
+.contact-item {
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .contact-item:hover {
+    background-color: #e9ecef; 
+    transform: scale(1.01); 
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .contact-name {
+    font-weight: bold;
+  }
+  
+  .contact-phone {
+    color: #6c757d; 
+  }
+  
