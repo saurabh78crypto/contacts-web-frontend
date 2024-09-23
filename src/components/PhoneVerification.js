@@ -13,7 +13,7 @@ const PhoneVerification = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/start-verification', {
+      const response = await fetch('https://contacts-web-backend.onrender.com/api/start-verification', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phoneNumber }),
@@ -35,7 +35,7 @@ const PhoneVerification = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/check-verification', {
+      const response = await fetch('https://contacts-web-backend.onrender.com/api/check-verification', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phoneNumber, code: otp }),
@@ -45,10 +45,10 @@ const PhoneVerification = () => {
         const data = await response.json();
         if (data.success) {
           setMessage('Phone number verified successfully!');
-          resetForm(); // Reset the entire form on successful OTP verification
+          resetForm(); 
         } else {
           setError('Invalid OTP.');
-          setOtp(''); // Only reset OTP if it's invalid
+          setOtp(''); 
         }
       } else {
         throw new Error('Failed to verify OTP.');
@@ -58,7 +58,6 @@ const PhoneVerification = () => {
     }
   };
 
-  // Function to reset the entire form
   const resetForm = () => {
     setPhoneNumber('');
     setOtp('');
